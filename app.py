@@ -33,7 +33,6 @@ st.markdown("""
     </style>
     """, unsafe_allow_html=True)
 
-@st.cache_data
 def load_trade_data():
     """Load the most recent trade data from logs directory"""
     log_dir = "logs"
@@ -51,7 +50,6 @@ def load_trade_data():
     with open(os.path.join(log_dir, latest_file), 'r') as f:
         return json.load(f)
 
-@st.cache_data
 def load_equity_data():
     """Load equity data from parquet files"""
     data_dir = "SPY"  # SPY directory in current folder
